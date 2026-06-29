@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: activity-system
+    runtime: php
+    plan: free
+    region: singapore
+    buildCommand: |
+      composer install --no-dev --optimize-autoloader
+    startCommand: php artisan serve --host=0.0.0.0 --port=$PORT
